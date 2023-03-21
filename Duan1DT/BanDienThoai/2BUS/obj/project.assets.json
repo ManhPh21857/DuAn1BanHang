@@ -634,6 +634,20 @@
             "rid": "win"
           }
         }
+      },
+      "1DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.12"
+        },
+        "compile": {
+          "bin/placeholder/1DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/1DAL.dll": {}
+        }
       }
     }
   },
@@ -1855,10 +1869,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "1DAL/1.0.0": {
+      "type": "project",
+      "path": "../1DAL/1DAL.csproj",
+      "msbuildProject": "../1DAL/1DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "1DAL >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.12",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.12",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.12",
@@ -1896,7 +1916,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "I:\\Dự án 1\\Duan1DT\\BanDienThoai\\1DAL\\1DAL.csproj": {
+              "projectPath": "I:\\Dự án 1\\Duan1DT\\BanDienThoai\\1DAL\\1DAL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

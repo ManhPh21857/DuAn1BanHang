@@ -35,7 +35,6 @@ I:\Dự án 1\Duan1DT\BanDienThoai\3PL\bin\Debug\net6.0-windows\runtimes\win-x64
 I:\Dự án 1\Duan1DT\BanDienThoai\3PL\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 I:\Dự án 1\Duan1DT\BanDienThoai\3PL\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\3PL.csproj.AssemblyReference.cache
-I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\_3PL.Form1.resources
 I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\3PL.csproj.GenerateResource.cache
 I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\3PL.GeneratedMSBuildEditorConfig.editorconfig
 I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\3PL.AssemblyInfoInputs.cache
@@ -47,3 +46,11 @@ I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\refint\3PL.dll
 I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\3PL.pdb
 I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\3PL.genruntimeconfig.cache
 I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\ref\3PL.dll
+I:\Dự án 1\Duan1DT\BanDienThoai\3PL\bin\Debug\net6.0-windows\1DAL.dll
+I:\Dự án 1\Duan1DT\BanDienThoai\3PL\bin\Debug\net6.0-windows\2BUS.dll
+I:\Dự án 1\Duan1DT\BanDienThoai\3PL\bin\Debug\net6.0-windows\2BUS.pdb
+I:\Dự án 1\Duan1DT\BanDienThoai\3PL\bin\Debug\net6.0-windows\1DAL.pdb
+I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\_3PL.Properties.Resources.resources
+I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\_3PL.View.FrmMauSac.resources
+I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\_3PL.View.FrmDienThoai.resources
+I:\Dự án 1\Duan1DT\BanDienThoai\3PL\obj\Debug\net6.0-windows\_3PL.View.FrmImei.resources

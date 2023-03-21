@@ -17,6 +17,7 @@ namespace _1DAL.ConText
         public DBContextDienThoai(DbContextOptions options) : base(options)
         {
         }
+        public DbSet<Imei> Imeis { get; set; }
         public DbSet<ChucVu> chucVus { get; set; }
         public DbSet<HangSX> hangSXs { get; set; }
         public DbSet<DungLuong> dungLuongs { get; set; }
@@ -26,10 +27,8 @@ namespace _1DAL.ConText
         public DbSet<HoaDonChiTiet> hoaDonChiTiets { get; set; }
         public DbSet<MauSac> mauSacs { get; set; }
         public DbSet<NhanVien> nhanViens { get; set; }
-        public DbSet<KhachHang> khachHangs { get; set; }
         public DbSet<KhuyenMai> khuyenMais { get; set; }
-        public DbSet<GioHang> gioHangs { get; set; }
-        public DbSet<GioHangCT> gioHangCTs { get; set; }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -46,9 +45,7 @@ namespace _1DAL.ConText
             modelBuilder.ApplyConfiguration(new HoaDonCTConfiguration());
             modelBuilder.ApplyConfiguration(new KhuyenMaiConfiguration());
             modelBuilder.ApplyConfiguration(new NhanVienConfiguration());
-            modelBuilder.ApplyConfiguration(new KhachHangConfiguration());
-            modelBuilder.ApplyConfiguration(new GioHangConfiguration());
-            modelBuilder.ApplyConfiguration(new GioHangCTConfiguration());
+            modelBuilder.ApplyConfiguration(new ImeiConfiguration());
             modelBuilder.ApplyConfiguration(new DienThoaiConfiguration());
             modelBuilder.ApplyConfiguration(new DienThoaiCTConfiguration());
             modelBuilder.ApplyConfiguration(new DungLuongConfiguration());

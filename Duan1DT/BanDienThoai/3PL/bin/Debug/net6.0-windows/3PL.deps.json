@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "3PL/1.0.0": {
         "dependencies": {
+          "2BUS": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.12",
           "Microsoft.EntityFrameworkCore.Design": "6.0.12",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.12",
@@ -408,6 +409,25 @@
         "dependencies": {
           "System.Drawing.Common": "4.7.0"
         }
+      },
+      "1DAL/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.12"
+        },
+        "runtime": {
+          "1DAL.dll": {}
+        }
+      },
+      "2BUS/1.0.0": {
+        "dependencies": {
+          "1DAL": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.12"
+        },
+        "runtime": {
+          "2BUS.dll": {}
+        }
       }
     }
   },
@@ -717,6 +737,16 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "1DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "2BUS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

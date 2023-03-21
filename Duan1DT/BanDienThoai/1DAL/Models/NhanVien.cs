@@ -15,11 +15,9 @@ namespace _1DAL.Models
         public string DiaChi { get; set; }
         public DateTime NgaySinh { get; set; }
         public string SDT { get; set; }
-        public string TaiKhoan { get; set; }
         public int TrangThai { get; set; }
         public string matKhau { get; set; }
         public ChucVu ChucVuS { get; set; }
         public virtual List<HoaDon> HoaDons { get; set; }
-        public virtual List<GioHang>GioHangs { get; set; }
     }
 }

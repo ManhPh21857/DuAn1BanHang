@@ -28,8 +28,8 @@ namespace _1DAL.Configuration
             builder.HasOne(x => x.DungLuongS).WithMany(p => p.DienThoaiCTS).HasForeignKey(p => p.MaDungLuong);
             builder.HasOne(x => x.MauSacS).WithMany(p => p.DienThoaiCTS).HasForeignKey(p => p.MaMau);
             builder.HasOne(x => x.HangSXS).WithMany(p => p.DienThoaiCTS).HasForeignKey(p => p.MaHang);
+            builder.HasOne(x => x.ImeiS).WithMany(p => p.DienThoaiCTs).HasForeignKey(p => p.MaImei);
 
-           
 
         }
     }

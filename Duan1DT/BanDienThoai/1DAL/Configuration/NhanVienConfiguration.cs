@@ -22,7 +22,7 @@ namespace _1DAL.Configuration
             builder.Property(p => p.DiaChi).HasColumnType("nvarchar(50)").IsRequired();
             builder.Property(p => p.SDT).HasColumnType("nvarchar(12)").IsRequired();
             builder.Property(p => p.NgaySinh).IsRequired();
-            builder.Property(p => p.TaiKhoan).HasColumnType("nvarchar(50)").IsRequired();
+           
             builder.Property(p => p.matKhau).HasColumnType("nvarchar(15)").IsRequired();
             builder.Property(p => p.TrangThai).IsRequired();
         }

@@ -12,3 +12,6 @@ I:\Dự án 1\Duan1DT\BanDienThoai\2BUS\obj\Debug\net6.0\refint\2BUS.dll
 I:\Dự án 1\Duan1DT\BanDienThoai\2BUS\obj\Debug\net6.0\2BUS.pdb
 I:\Dự án 1\Duan1DT\BanDienThoai\2BUS\obj\Debug\net6.0\2BUS.genruntimeconfig.cache
 I:\Dự án 1\Duan1DT\BanDienThoai\2BUS\obj\Debug\net6.0\ref\2BUS.dll
+I:\Dự án 1\Duan1DT\BanDienThoai\2BUS\bin\Debug\net6.0\1DAL.dll
+I:\Dự án 1\Duan1DT\BanDienThoai\2BUS\bin\Debug\net6.0\1DAL.pdb
+I:\Dự án 1\Duan1DT\BanDienThoai\2BUS\obj\Debug\net6.0\2BUS.csproj.CopyComplete

@@ -17,6 +17,7 @@ namespace _1DAL.Configuration
             builder.HasKey(x => x.MaDT); // Set khóa chính
             builder.Property(x => x.MaDT).UseIdentityColumn(1, 1);
             builder.Property(p=>p.TrangThai).IsRequired();
+         
             // Cấu trúc dữ liệu
             builder.Property(p => p.TenDT).HasColumnType("nvarchar(50)").IsRequired(); // nvarchar(50) not null
         }

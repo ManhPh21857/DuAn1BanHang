@@ -23,10 +23,7 @@ namespace _1DAL.Extensions
                 new HangSX() { MaHang = 1, TenHang = "Apple", TrangThai = 1 },
                  new HangSX() { MaHang = 2, TenHang = "Realme", TrangThai = 1 }
                 );
-            modelBuilder.Entity<KhachHang>().HasData(
-                new KhachHang() { MaKH = 1, TenKH = "Không tên",GioiTinh = 1,SDT= "0123456789", DiaChi = "Hà Nội",Diem = 0 },
-                new KhachHang() { MaKH = 2, TenKH = "Quoc Manh", GioiTinh = 1, SDT = "0336253482", DiaChi = "Hà Nội", Diem = 10000 }
-                );
+          
             modelBuilder.Entity<MauSac>().HasData(
                 new MauSac() { MaMau = 1, TenMau = "Xanh", TrangThai = 1 },
                  new MauSac() { MaMau = 2, TenMau = "Tim", TrangThai = 1 }
@@ -37,12 +34,15 @@ namespace _1DAL.Extensions
               new DienThoai() { MaDT = 2, TenDT = "Realme note 9 pro", TrangThai = 1 }
 
               );
+            modelBuilder.Entity<Imei>().HasData(new Imei() { MaImei = 1, TenImei = "0123456789", TrangThai = true },
+                new Imei() { MaImei = 2, TenImei = "0123456788", TrangThai = true });
+
             modelBuilder.Entity<NhanVien>().HasData(
-                new NhanVien() { MaNV = 1, TenNV = "Nguyễn Văn Đạo", MaCV = 2, DiaChi = "Tuyên Quang", SDT = "0379702133", TaiKhoan = "dao7773", GioiTinh = 1, matKhau = "123", NgaySinh = DateTime.Now, TrangThai = 1 },
-                 new NhanVien() { MaNV = 2, TenNV = "Ngô Quốc Mạnh", MaCV = 1, DiaChi = "Hà Nam", SDT = "0336253482", TaiKhoan = "manhnq2003", GioiTinh = 1, matKhau = "123", NgaySinh = DateTime.Now, TrangThai = 1 }
+                new NhanVien() { MaNV = 1, TenNV = "Nguyễn Văn Đạo", MaCV = 2, DiaChi = "Tuyên Quang", SDT = "0379702133", GioiTinh = 1, matKhau = "123", NgaySinh = DateTime.Now, TrangThai = 1 },
+                 new NhanVien() { MaNV = 2, TenNV = "Ngô Quốc Mạnh", MaCV = 1, DiaChi = "Hà Nam", SDT = "0336253482",  GioiTinh = 1, matKhau = "123", NgaySinh = DateTime.Now, TrangThai = 1 }
                 );
             modelBuilder.Entity<DienThoaiCT>().HasData(
-                new DienThoaiCT() { MaDTCT = 1, MaDT = 1, GiaNhap = 100000, GiaBan = 110000, SoLuong = 50, MaDungLuong = 1, MaHang = 1, MaMau = 1, LinkAnh = "" });
+                new DienThoaiCT() { MaDTCT = 1, MaDT = 1, MaImei = 1, GiaNhap = 100000, GiaBan = 110000, SoLuong = 50, MaDungLuong = 1, MaHang = 1, MaMau = 1, LinkAnh = "" });
         }
     }
 }
