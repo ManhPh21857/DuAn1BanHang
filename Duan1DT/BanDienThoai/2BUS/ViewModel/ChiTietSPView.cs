@@ -13,5 +13,6 @@ namespace _2BUS.ViewModel
         public HangSX hangSX { get; set; }
         public DungLuong dungLuong { get; set; }
         public DienThoai dienThoai { get; set; }
+        public Imei imei { get; set; }
     }
 }

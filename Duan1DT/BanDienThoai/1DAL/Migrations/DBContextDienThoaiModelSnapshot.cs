@@ -118,6 +118,10 @@ namespace _1DAL.Migrations
                     b.Property<int>("MaMau")
                         .HasColumnType("int");
 
+                    b.Property<string>("MaQR")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)");
+
                     b.Property<int>("SoLuong")
                         .HasColumnType("int");
 
@@ -147,6 +151,7 @@ namespace _1DAL.Migrations
                             MaHang = 1,
                             MaImei = 1,
                             MaMau = 1,
+                            MaQR = "12345",
                             SoLuong = 50
                         });
                 });
@@ -232,6 +237,9 @@ namespace _1DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(300)");
 
+                    b.Property<int>("MaKH")
+                        .HasColumnType("int");
+
                     b.Property<int>("MaNV")
                         .HasColumnType("int");
 
@@ -242,6 +250,8 @@ namespace _1DAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("MaHD");
+
+                    b.HasIndex("MaKH");
 
                     b.HasIndex("MaNV");
 
@@ -305,6 +315,66 @@ namespace _1DAL.Migrations
                             MaImei = 2,
                             TenImei = "0123456788",
                             TrangThai = true
+                        });
+                });
+
+            modelBuilder.Entity("_1DAL.Models.KhachHang", b =>
+                {
+                    b.Property<int>("MaKH")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MaKH"), 1L, 1);
+
+                    b.Property<string>("DiaChi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Diem")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("GioiTinh")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SDT")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(12)");
+
+                    b.Property<string>("TenKH")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("MaKH");
+
+                    b.ToTable("KhachHang", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            MaKH = 1,
+                            DiaChi = "Hà Nam",
+                            Diem = 50000,
+                            GioiTinh = true,
+                            SDT = "0336253482",
+                            TenKH = "Ngô Quốc Mạnh"
+                        },
+                        new
+                        {
+                            MaKH = 2,
+                            DiaChi = "Hà Nội",
+                            Diem = 50000,
+                            GioiTinh = true,
+                            SDT = "0123456789",
+                            TenKH = "Chuyên Xem Chùa"
+                        },
+                        new
+                        {
+                            MaKH = 3,
+                            DiaChi = "không rõ",
+                            Diem = 0,
+                            GioiTinh = true,
+                            SDT = "0",
+                            TenKH = "Khách Vãng Lai"
                         });
                 });
 
@@ -420,7 +490,7 @@ namespace _1DAL.Migrations
                             DiaChi = "Tuyên Quang",
                             GioiTinh = 1,
                             MaCV = 2,
-                            NgaySinh = new DateTime(2023, 3, 21, 19, 48, 15, 471, DateTimeKind.Local).AddTicks(1097),
+                            NgaySinh = new DateTime(2023, 4, 4, 15, 21, 11, 997, DateTimeKind.Local).AddTicks(1430),
                             SDT = "0379702133",
                             TenNV = "Nguyễn Văn Đạo",
                             TrangThai = 1,
@@ -432,7 +502,7 @@ namespace _1DAL.Migrations
                             DiaChi = "Hà Nam",
                             GioiTinh = 1,
                             MaCV = 1,
-                            NgaySinh = new DateTime(2023, 3, 21, 19, 48, 15, 471, DateTimeKind.Local).AddTicks(1109),
+                            NgaySinh = new DateTime(2023, 4, 4, 15, 21, 11, 997, DateTimeKind.Local).AddTicks(1444),
                             SDT = "0336253482",
                             TenNV = "Ngô Quốc Mạnh",
                             TrangThai = 1,
@@ -485,11 +555,19 @@ namespace _1DAL.Migrations
 
             modelBuilder.Entity("_1DAL.Models.HoaDon", b =>
                 {
+                    b.HasOne("_1DAL.Models.KhachHang", "KhachHangS")
+                        .WithMany("HoaDons")
+                        .HasForeignKey("MaKH")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("_1DAL.Models.NhanVien", "NhanVienS")
                         .WithMany("HoaDons")
                         .HasForeignKey("MaNV")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("KhachHangS");
 
                     b.Navigation("NhanVienS");
                 });
@@ -565,6 +643,11 @@ namespace _1DAL.Migrations
             modelBuilder.Entity("_1DAL.Models.Imei", b =>
                 {
                     b.Navigation("DienThoaiCTs");
+                });
+
+            modelBuilder.Entity("_1DAL.Models.KhachHang", b =>
+                {
+                    b.Navigation("HoaDons");
                 });
 
             modelBuilder.Entity("_1DAL.Models.KhuyenMai", b =>

@@ -20,6 +20,7 @@ namespace _1DAL.Configuration
             // cấu trúc dữ liệu
 
             builder.Property(p => p.SoLuong).IsRequired();
+            builder.Property(p=>p.MaQR).HasColumnType("nvarchar(30)").IsRequired();
             builder.Property(p => p.GiaNhap).IsRequired();
             builder.Property(p => p.GiaBan).IsRequired();
             builder.Property(p => p.LinkAnh).HasColumnType("nvarchar(100)").IsRequired();

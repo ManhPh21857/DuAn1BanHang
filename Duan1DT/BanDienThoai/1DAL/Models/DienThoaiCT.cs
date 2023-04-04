@@ -17,6 +17,7 @@ namespace _1DAL.Models
         public int SoLuong { get; set; }
         public int GiaNhap { get; set; }
         public int GiaBan { get; set; }
+        public string MaQR { get; set; }
         public string LinkAnh { get; set; }
         public DienThoai DienThoaiS { get; set; }
         public DungLuong DungLuongS { get; set; }

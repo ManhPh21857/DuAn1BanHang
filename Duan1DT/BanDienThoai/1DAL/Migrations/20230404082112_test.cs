@@ -79,6 +79,23 @@ namespace _1DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "KhachHang",
+                columns: table => new
+                {
+                    MaKH = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TenKH = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    SDT = table.Column<string>(type: "nvarchar(12)", nullable: false),
+                    DiaChi = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    GioiTinh = table.Column<bool>(type: "bit", nullable: false),
+                    Diem = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_KhachHang", x => x.MaKH);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "KhuyenMai",
                 columns: table => new
                 {
@@ -149,6 +166,7 @@ namespace _1DAL.Migrations
                     SoLuong = table.Column<int>(type: "int", nullable: false),
                     GiaNhap = table.Column<int>(type: "int", nullable: false),
                     GiaBan = table.Column<int>(type: "int", nullable: false),
+                    MaQR = table.Column<string>(type: "nvarchar(30)", nullable: false),
                     LinkAnh = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
@@ -193,6 +211,7 @@ namespace _1DAL.Migrations
                     MaHD = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MaNV = table.Column<int>(type: "int", nullable: false),
+                    MaKH = table.Column<int>(type: "int", nullable: false),
                     NgayBan = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Ghichu = table.Column<string>(type: "nvarchar(300)", nullable: false),
                     TrangThai = table.Column<int>(type: "int", nullable: false)
@@ -200,6 +219,12 @@ namespace _1DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_HoaDon", x => x.MaHD);
+                    table.ForeignKey(
+                        name: "FK_HoaDon_KhachHang_MaKH",
+                        column: x => x.MaKH,
+                        principalTable: "KhachHang",
+                        principalColumn: "MaKH",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_HoaDon_NhanVien_MaNV",
                         column: x => x.MaNV,
@@ -287,6 +312,16 @@ namespace _1DAL.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "KhachHang",
+                columns: new[] { "MaKH", "DiaChi", "Diem", "GioiTinh", "SDT", "TenKH" },
+                values: new object[,]
+                {
+                    { 1, "Hà Nam", 50000, true, "0336253482", "Ngô Quốc Mạnh" },
+                    { 2, "Hà Nội", 50000, true, "0123456789", "Chuyên Xem Chùa" },
+                    { 3, "không rõ", 0, true, "0", "Khách Vãng Lai" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "MauSac",
                 columns: new[] { "MaMau", "TenMau", "TrangThai" },
                 values: new object[,]
@@ -297,18 +332,18 @@ namespace _1DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "DienThoaiCT",
-                columns: new[] { "MaDTCT", "GiaBan", "GiaNhap", "LinkAnh", "MaDT", "MaDungLuong", "MaHang", "MaImei", "MaMau", "SoLuong" },
-                values: new object[] { 1, 110000, 100000, "", 1, 1, 1, 1, 1, 50 });
+                columns: new[] { "MaDTCT", "GiaBan", "GiaNhap", "LinkAnh", "MaDT", "MaDungLuong", "MaHang", "MaImei", "MaMau", "MaQR", "SoLuong" },
+                values: new object[] { 1, 110000, 100000, "", 1, 1, 1, 1, 1, "12345", 50 });
 
             migrationBuilder.InsertData(
                 table: "NhanVien",
                 columns: new[] { "MaNV", "DiaChi", "GioiTinh", "MaCV", "NgaySinh", "SDT", "TenNV", "TrangThai", "matKhau" },
-                values: new object[] { 1, "Tuyên Quang", 1, 2, new DateTime(2023, 3, 21, 19, 48, 15, 471, DateTimeKind.Local).AddTicks(1097), "0379702133", "Nguyễn Văn Đạo", 1, "123" });
+                values: new object[] { 1, "Tuyên Quang", 1, 2, new DateTime(2023, 4, 4, 15, 21, 11, 997, DateTimeKind.Local).AddTicks(1430), "0379702133", "Nguyễn Văn Đạo", 1, "123" });
 
             migrationBuilder.InsertData(
                 table: "NhanVien",
                 columns: new[] { "MaNV", "DiaChi", "GioiTinh", "MaCV", "NgaySinh", "SDT", "TenNV", "TrangThai", "matKhau" },
-                values: new object[] { 2, "Hà Nam", 1, 1, new DateTime(2023, 3, 21, 19, 48, 15, 471, DateTimeKind.Local).AddTicks(1109), "0336253482", "Ngô Quốc Mạnh", 1, "123" });
+                values: new object[] { 2, "Hà Nam", 1, 1, new DateTime(2023, 4, 4, 15, 21, 11, 997, DateTimeKind.Local).AddTicks(1444), "0336253482", "Ngô Quốc Mạnh", 1, "123" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_DienThoaiCT_MaDT",
@@ -334,6 +369,11 @@ namespace _1DAL.Migrations
                 name: "IX_DienThoaiCT_MaMau",
                 table: "DienThoaiCT",
                 column: "MaMau");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HoaDon_MaKH",
+                table: "HoaDon",
+                column: "MaKH");
 
             migrationBuilder.CreateIndex(
                 name: "IX_HoaDon_MaNV",
@@ -384,6 +424,9 @@ namespace _1DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "MauSac");
+
+            migrationBuilder.DropTable(
+                name: "KhachHang");
 
             migrationBuilder.DropTable(
                 name: "NhanVien");

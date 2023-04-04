@@ -18,11 +18,13 @@ namespace _1DAL.Configuration
             builder.Property(x => x.MaHD).UseIdentityColumn(1, 1);
 
             builder.HasOne(p => p.NhanVienS).WithMany(p => p.HoaDons).HasForeignKey(p => p.MaNV);
-           ;
+
+            builder.HasOne(p => p.KhachHangS).WithMany(p => p.HoaDons).HasForeignKey(p => p.MaKH);
             // Set các ràng buộc cho thuộc tính
             builder.Property(x => x.NgayBan).IsRequired();
             builder.Property(x => x.Ghichu).HasColumnType("nvarchar(300)").IsRequired();
             builder.Property(x => x.TrangThai).IsRequired();
+            
         }
     }
 }

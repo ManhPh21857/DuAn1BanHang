@@ -10,10 +10,12 @@ namespace _1DAL.Models
     {
         public int MaHD { get; set; }
         public int MaNV { get; set; }
+        public int MaKH { get; set; }
         public DateTime NgayBan { get; set; }
         public string Ghichu { get; set; }
         public int TrangThai { get; set; }
         public virtual List<HoaDonChiTiet> HoaDonChiTietS { get; set; }
         public NhanVien NhanVienS { get; set; }
+        public KhachHang KhachHangS { get; set; }
     }
 }

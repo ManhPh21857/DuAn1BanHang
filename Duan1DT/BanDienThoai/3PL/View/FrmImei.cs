@@ -27,7 +27,7 @@ namespace _3PL.View
             foreach (var item in _ISV.GetAll())
             {
                 dtgv_DT.Rows.Add(item.MaImei, item.TenImei,
-                    item.TrangThai == true ? "Còn hàng" : "Hết hàng");
+                    item.TrangThai == true ? "Chưa sử dụng" : "Đã sử dụng");
             }
         }
 
@@ -38,8 +38,8 @@ namespace _3PL.View
                 DataGridViewRow row = dtgv_DT.Rows[e.RowIndex];
                 _IM = _ISV.GetAll().FirstOrDefault(x => x.MaImei == Convert.ToInt32(row.Cells[0].Value));
                 tbt_TenDT.Text = row.Cells[1].Value.ToString();
-                rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
-                rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;
+                rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Chưa sử dụng" ? true : false;
+                rb_KHD.Checked = row.Cells[2].Value.ToString() == "Đã sử dụng" ? true : false;
             }
         }
 

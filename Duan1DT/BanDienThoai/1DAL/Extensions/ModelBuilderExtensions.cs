@@ -42,7 +42,12 @@ namespace _1DAL.Extensions
                  new NhanVien() { MaNV = 2, TenNV = "Ngô Quốc Mạnh", MaCV = 1, DiaChi = "Hà Nam", SDT = "0336253482",  GioiTinh = 1, matKhau = "123", NgaySinh = DateTime.Now, TrangThai = 1 }
                 );
             modelBuilder.Entity<DienThoaiCT>().HasData(
-                new DienThoaiCT() { MaDTCT = 1, MaDT = 1, MaImei = 1, GiaNhap = 100000, GiaBan = 110000, SoLuong = 50, MaDungLuong = 1, MaHang = 1, MaMau = 1, LinkAnh = "" });
+                new DienThoaiCT() { MaDTCT = 1, MaDT = 1, MaImei = 1, GiaNhap = 100000, GiaBan = 110000, SoLuong = 50, MaDungLuong = 1, MaHang = 1, MaMau = 1, MaQR="12345",LinkAnh = "" });
+            modelBuilder.Entity<KhachHang>().HasData(
+                new KhachHang() { MaKH=1, TenKH="Ngô Quốc Mạnh", DiaChi="Hà Nam", GioiTinh= true, SDT="0336253482", Diem = 50000},
+                new KhachHang() { MaKH = 2, TenKH = "Chuyên Xem Chùa", DiaChi = "Hà Nội", GioiTinh = true, SDT = "0123456789", Diem = 50000 },
+                new KhachHang() { MaKH = 3, TenKH = "Khách Vãng Lai", DiaChi = "không rõ", GioiTinh = true, SDT = "0", Diem = 0 }
+                );
         }
     }
 }

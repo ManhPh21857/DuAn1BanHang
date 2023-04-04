@@ -28,7 +28,7 @@ namespace _1DAL.ConText
         public DbSet<MauSac> mauSacs { get; set; }
         public DbSet<NhanVien> nhanViens { get; set; }
         public DbSet<KhuyenMai> khuyenMais { get; set; }
-        
+        public DbSet<KhachHang> khachHangs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -51,6 +51,7 @@ namespace _1DAL.ConText
             modelBuilder.ApplyConfiguration(new DungLuongConfiguration());
             modelBuilder.ApplyConfiguration(new HangSXConfiguration());
             modelBuilder.ApplyConfiguration(new MauSacConfiguration());
+            modelBuilder.ApplyConfiguration(new KhachHangConfiguration());
             //modelBuilder.ApplyConfiguration(new ProductInCategoryConfiguration());
             //modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             modelBuilder.Seed(); //gọi cái này để seeding data

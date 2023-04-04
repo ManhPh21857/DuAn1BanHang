@@ -95,7 +95,7 @@ namespace _3PL.View
                     _MSSV.Update(_MS);
                     MessageBox.Show("Cập nhật thành công");
                     LoadToData();
-                    tbt_TenMau.Text = "";
+                    
                 }
                 else
                 {

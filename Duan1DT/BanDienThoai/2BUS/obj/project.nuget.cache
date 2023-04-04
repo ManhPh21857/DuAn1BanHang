@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PM5mdIm9xPPFSl6zndbjT0J/aZQLUH+0KsnrwZ8/BbyAro3FD5Fxg32Ggkkd+/SRHgb7gpZ83it9xgd1Nd9Pog==",
+  "dgSpecHash": "ZCtgdhsCPR6UW+8055Mcl0JQ5pjo8TcQ2LoOVEEIz/cRgzs4RtSgh4vhHBnpSJW9n262fUGDasByFBo5/tQ99w==",
   "success": true,
-  "projectFilePath": "I:\\Dự án 1\\Duan1DT\\BanDienThoai\\2BUS\\2BUS.csproj",
+  "projectFilePath": "I:\\Dự án 1\\Duan1DT\\DuAn1BanHang-main\\DuAn1BanHang-main\\Duan1DT\\BanDienThoai\\2BUS\\2BUS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
